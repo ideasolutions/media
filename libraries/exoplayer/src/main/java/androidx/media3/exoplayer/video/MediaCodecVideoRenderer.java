@@ -2764,6 +2764,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer
 
   private static boolean evaluateDeviceNeedsSetOutputSurfaceWorkaround() {
     android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround");
+    if (SDK_INT <= 28) {
       // Workaround for MiTV and MiBox devices which have been observed broken up to API 28.
       // https://github.com/google/ExoPlayer/issues/5169,
       // https://github.com/google/ExoPlayer/issues/6899.
